@@ -1,0 +1,6 @@
+{
+  "name": "Cyberpunk Portfolio Showcase",
+  "description": "A retro-themed pixel art cyberpunk showcase website inspired by VA-11 HALL-A, featuring soft snow effects, scrolling illustration banners, and project displays.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

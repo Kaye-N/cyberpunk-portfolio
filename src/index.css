@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "VT323", "Courier New", monospace;
+  --font-title: "Silkscreen", "Press Start 2P", monospace;
+  --font-press-start: "Press Start 2P", monospace;
+}
+
+/* Custom styles for VA-11 HALL-A style Cyberpunk theme */
+.text-glow-white {
+  text-shadow: 0 0 6px rgb(255, 255, 255), 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 8px rgb(236, 72, 153), 0 0 18px rgba(236, 72, 153, 0.5);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 8px rgb(6, 182, 212), 0 0 18px rgba(6, 182, 212, 0.5);
+}
+
+.box-glow-pink {
+  box-shadow: 0 0 10px rgb(236, 72, 153), inset 0 0 10px rgba(236, 72, 153, 0.3);
+}
+
+.box-glow-cyan {
+  box-shadow: 0 0 10px rgb(6, 182, 212), inset 0 0 10px rgba(6, 182, 212, 0.3);
+}
+
+.box-glow-white {
+  box-shadow: 0 0 12px rgb(255, 255, 255), inset 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.box-glow-white-soft {
+  box-shadow: 0 0 8px rgb(255, 255, 255, 0.4), inset 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+/* scanlines CRT overlay */
+.scanlines {
+  position: relative;
+}
+
+.scanlines::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.18) 50%);
+  background-size: 100% 3px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* custom pixelation look */
+.pixel-corners {
+  position: relative;
+  border: 4px solid #fff;
+}
+
+/* scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0714;
+  border-left: 2px solid #ec4899;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #db2777;
+  border: 2px solid #0d0714;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* Retro infinite scrolling animation */
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-scroll-left {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 35s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+.animate-scroll-right {
+  display: flex;
+  width: max-content;
+  animation: scroll-right 35s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+/* Pause scroll on hover */
+.animate-scroll-left:hover, .animate-scroll-right:hover {
+  animation-play-state: paused;
+}
+
+/* Retro CRT Screen Flicker */
+@keyframes crt-flicker {
+  0% { opacity: 0.995; }
+  50% { opacity: 1; }
+  100% { opacity: 0.992; }
+}
+
+.crt-flicker {
+  animation: crt-flicker 0.15s infinite;
+}
+
+/* Soft snowfall animation inside canvas */
+body {
+  background-color: #030105;
+  color: #fff;
+  overflow-x: hidden;
+  image-rendering: pixelated;
+}
