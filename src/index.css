@@ -5,6 +5,14 @@
   --font-sans: "VT323", "Courier New", monospace;
   --font-title: "Silkscreen", "Press Start 2P", monospace;
   --font-press-start: "Press Start 2P", monospace;
+
+  /* Elevate font sizes to compensate for the condensed VT323 retro pixel font */
+  --font-size-xs: 1.2rem;      /* Bumps up tiny metadata displays */
+  --font-size-sm: 1.4rem;      /* Great for list elements, buttons, cards */
+  --font-size-base: 1.6rem;    /* Normal reading content is now fully clear */
+  --font-size-lg: 1.9rem;       /* Headers and medium alert bands */
+  --font-size-xl: 2.3rem;       /* Primary module header titles */
+  --font-size-2xl: 3.0rem;      /* Hero logo display headers */
 }
 
 /* Custom styles for VA-11 HALL-A style Cyberpunk theme */
@@ -129,4 +137,8 @@ body {
   color: #fff;
   overflow-x: hidden;
   image-rendering: pixelated;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  letter-spacing: 0.04em;
+  line-height: 1.55;
 }

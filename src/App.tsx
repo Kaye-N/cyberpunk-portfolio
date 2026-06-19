@@ -7,6 +7,7 @@ import SnowBackground from "./components/SnowBackground.tsx";
 import ScrollingBanner from "./components/ScrollingBanner.tsx";
 import AboutPanel from "./components/AboutPanel.tsx";
 import MusicPlayer from "./components/MusicPlayer.tsx";
+import FF14Panel from "./components/FF14Panel.tsx";
 import Guestbook from "./components/Guestbook.tsx";
 import PortfolioShowcase from "./components/PortfolioShowcase.tsx";
 import { PixelIcon } from "./components/PixelIcons.tsx";
@@ -218,6 +219,9 @@ export default function App() {
 
               {/* Jukebox Audio Player */}
               <MusicPlayer />
+
+              {/* Final Fantasy XIV Character Deck & News Feed */}
+              <FF14Panel />
 
               {/* Interactive Construction Badge / Pride indicator */}
               <div className="border-4 border-dashed border-cyan-400 p-4 bg-zinc-950/90 rounded-sm relative shadow-[0_0_10px_rgba(6,182,212,0.15)] flex gap-3.5 items-start">
