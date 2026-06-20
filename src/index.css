@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap');
 @import "tailwindcss";
 
-@theme {
+:root {
   --font-sans: "VT323", "Courier New", monospace;
   --font-title: "Silkscreen", "Press Start 2P", monospace;
   --font-press-start: "Press Start 2P", monospace;
