@@ -7,12 +7,15 @@
   --font-press-start: "Press Start 2P", monospace;
 
   /* Elevate font sizes to compensate for the condensed VT323 retro pixel font */
-  --font-size-xs: 1.2rem;      /* Bumps up tiny metadata displays */
-  --font-size-sm: 1.4rem;      /* Great for list elements, buttons, cards */
-  --font-size-base: 1.6rem;    /* Normal reading content is now fully clear */
-  --font-size-lg: 1.9rem;       /* Headers and medium alert bands */
-  --font-size-xl: 2.3rem;       /* Primary module header titles */
-  --font-size-2xl: 3.0rem;      /* Hero logo display headers */
+  --font-size-xs: 1.45rem;      /* Bumps up tiny metadata displays */
+  --font-size-sm: 1.75rem;      /* Great for list elements, buttons, cards */
+  --font-size-base: 2.1rem;     /* Normal reading content is now fully clear */
+  --font-size-lg: 2.5rem;       /* Headers and medium alert bands */
+  --font-size-xl: 3.2rem;       /* Primary module header titles */
+  --font-size-2xl: 4.4rem;      /* Hero logo display headers */
+  --font-size-3xl: 5.2rem;      /* Large title emphasis blocks */
+  --font-size-4xl: 6.2rem;      /* Extra-large emphasis blocks */
+  --font-size-5xl: 7.5rem;      /* Massively scaled hero banners */
 }
 
 /* Custom styles for VA-11 HALL-A style Cyberpunk theme */

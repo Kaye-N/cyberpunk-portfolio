@@ -189,7 +189,7 @@ export default function App() {
             <h1 className="font-title text-2xl sm:text-4xl text-white text-glow-white tracking-[0.2em] font-bold uppercase select-none mt-2">
               NEONBANDIT STREET
             </h1>
-            <p className="mt-1 font-title text-[9px] text-zinc-500 tracking-widest uppercase">
+            <p className="mt-1 font-title text-sm text-zinc-500 tracking-widest uppercase">
               // Cyberpunk Bartender Showcase // Glitch Sector 23 //
             </p>
 
@@ -227,16 +227,16 @@ export default function App() {
               <div className="border-4 border-dashed border-cyan-400 p-4 bg-zinc-950/90 rounded-sm relative shadow-[0_0_10px_rgba(6,182,212,0.15)] flex gap-3.5 items-start">
                 <Hammer className="w-8 h-8 text-pink-500 animate-bounce flex-shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <div className="font-title text-[10px] text-pink-500 uppercase tracking-widest flex items-center justify-between">
+                  <div className="font-title text-sm text-pink-500 uppercase tracking-widest flex items-center justify-between">
                     <span>SYSTEM NOTIFICATION</span>
-                    <span className="text-[8px] border border-pink-500 px-1 py-0.5 animate-pulse text-zinc-400">
+                    <span className="text-xs border border-pink-500 px-1 py-0.5 animate-pulse text-zinc-400">
                       WIP
                     </span>
                   </div>
-                  <h4 className="font-title text-xs text-white uppercase tracking-wider mt-1.5">
+                  <h4 className="font-title text-base text-white uppercase tracking-wider mt-1.5">
                     UNDER CONSTRUCTION
                   </h4>
-                  <p className="text-xs text-zinc-400 font-sans mt-1 leading-snug">
+                  <p className="text-base text-zinc-400 font-sans mt-1 leading-snug">
                     This pixel zone is a work-in-progress. I am constantly coding newer custom widgets. Pop back soon!
                   </p>
                 </div>
@@ -259,7 +259,7 @@ export default function App() {
                 </div>
 
                 <div className="border-b border-zinc-800 pb-2 mb-3">
-                  <h3 className="font-title text-[10px] text-zinc-400 uppercase tracking-widest flex items-center gap-1.5">
+                  <h3 className="font-title text-sm text-zinc-400 uppercase tracking-widest flex items-center gap-1.5">
                     <AlertTriangle className="w-3.5 h-3.5 text-yellow-400" /> COMMISSION NOTICE BOARD
                   </h3>
                 </div>
@@ -276,14 +276,14 @@ export default function App() {
                   
                   <div className="sm:col-span-8 space-y-2">
                     <div className="flex items-center gap-2">
-                      <span className="bg-pink-500/15 border border-pink-500 text-pink-500 font-title text-[8px] px-1.5 py-0.5 uppercase tracking-widest animate-pulse">
+                      <span className="bg-pink-500/15 border border-pink-500 text-pink-500 font-title text-xs px-1.5 py-0.5 uppercase tracking-widest animate-pulse">
                         COMMISSIONS: OPEN
                       </span>
-                      <span className="font-mono text-[10px] text-zinc-500">
+                      <span className="font-mono text-xs text-zinc-500">
                         Updated 2 days ago
                       </span>
                     </div>
-                    <blockquote className="border-l-2 border-cyan-400 pl-3 italic text-xs text-zinc-300">
+                    <blockquote className="border-l-2 border-cyan-400 pl-3 italic text-base text-zinc-300">
                       "Commission queues are currently open via VGen or Discord! Working mostly on furry/human pixel icons and Custom Deltacable AU layouts."
                     </blockquote>
                     <div className="flex gap-2">
@@ -291,7 +291,7 @@ export default function App() {
                         href="https://vgen.co/NEONbandit"
                         target="_blank"
                         rel="noopener"
-                        className="text-[9px] font-title text-cyan-400 hover:text-white border-b border-cyan-400 hover:border-white transition-colors uppercase tracking-wider block"
+                        className="text-xs font-title text-cyan-400 hover:text-white border-b border-cyan-400 hover:border-white transition-colors uppercase tracking-wider block"
                       >
                         [ VIEW COMMS PRICE SHEET ]
                       </a>
@@ -306,18 +306,18 @@ export default function App() {
                 onSelectProject={(proj) => setSelectedProject(proj)}
               />
 
-              {/* Banners edit and customizer configuration module */}
+               {/* Banners edit and customizer configuration module */}
               <section
                 id="banner-editor-compartment"
                 className="border-4 border-zinc-800 bg-zinc-950 p-5 rounded-sm relative"
               >
                 <div className="flex justify-between items-center border-b border-zinc-800 pb-2.5 mb-4">
-                  <div className="font-title text-[10px] text-zinc-400 uppercase tracking-widest flex items-center gap-1.5">
+                  <div className="font-title text-xs text-zinc-400 uppercase tracking-widest flex items-center gap-1.5">
                     <Sparkles className="w-4 h-4 text-cyan-400" /> BANNER SLOT CONTROLLER
                   </div>
                   <button
                     onClick={() => setShowConfig(!showConfig)}
-                    className="text-[9px] font-title border border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 px-3 py-1 cursor-pointer transition-colors uppercase rounded-xs"
+                    className="text-xs font-title border border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 px-3 py-1 cursor-pointer transition-colors uppercase rounded-xs"
                   >
                     {showConfig ? "[ Close Editor ]" : "[ Edit Banner Illustrations ]"}
                   </button>
@@ -327,13 +327,13 @@ export default function App() {
                   <div className="space-y-5">
                     {/* Add form */}
                     <form onSubmit={handleAddIllustration} className="space-y-3 bg-zinc-900 p-4 border border-zinc-800 rounded-sm">
-                      <div className="text-[9px] font-title text-pink-500 uppercase tracking-widest">
+                      <div className="text-xs font-title text-pink-500 uppercase tracking-widest">
                         // ADD CUSTOM ILLUSTRATION TO SCROLLING MARQUEE
                       </div>
                       
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div className="flex flex-col gap-1">
-                          <label className="text-[9px] font-title text-zinc-400 uppercase tracking-wider">
+                          <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
                             Illustration Title
                           </label>
                           <input
@@ -342,12 +342,12 @@ export default function App() {
                             placeholder="e.g. Glowing Neon Synth"
                             value={newTitle}
                             onChange={(e) => setNewTitle(e.target.value)}
-                            className="px-3 py-2 bg-zinc-950 border border-zinc-800 text-xs text-white focus:outline-none focus:border-cyan-400 rounded-sm"
+                            className="px-3 py-2 bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-cyan-400 rounded-sm"
                           />
                         </div>
                         
                         <div className="flex flex-col gap-1">
-                          <label className="text-[9px] font-title text-zinc-400 uppercase tracking-wider">
+                          <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
                             Direct Image Link / URL or Picsum Seed
                           </label>
                           <input
@@ -356,13 +356,13 @@ export default function App() {
                             placeholder="e.g. https://picsum.photos/seed/cybercat/300/300"
                             value={newUrl}
                             onChange={(e) => setNewUrl(e.target.value)}
-                            className="px-3 py-2 bg-zinc-950 border border-zinc-800 text-xs text-white focus:outline-none focus:border-cyan-400 rounded-sm"
+                            className="px-3 py-2 bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-cyan-400 rounded-sm"
                           />
                         </div>
                       </div>
 
                       <div className="flex flex-col gap-1">
-                        <label className="text-[9px] font-title text-zinc-400 uppercase tracking-wider">
+                        <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
                           Description Log (shows when clicked in banner)
                         </label>
                         <textarea
@@ -370,13 +370,13 @@ export default function App() {
                           rows={2}
                           value={newDesc}
                           onChange={(e) => setNewDesc(e.target.value)}
-                          className="px-3 py-2 bg-zinc-950 border border-zinc-800 text-xs text-white focus:outline-none focus:border-cyan-400 rounded-sm resize-none"
+                          className="px-3 py-2 bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-cyan-400 rounded-sm resize-none"
                         />
                       </div>
 
                       <button
                         type="submit"
-                        className="w-full sm:w-auto px-5 py-2.5 bg-cyan-500 hover:bg-cyan-600 border border-cyan-400 font-title text-[9px] tracking-wider text-white uppercase flex items-center justify-center gap-1 cursor-pointer transition-all rounded-sm box-glow-cyan"
+                        className="w-full sm:w-auto px-5 py-2.5 bg-cyan-500 hover:bg-cyan-600 border border-cyan-400 font-title text-xs tracking-wider text-white uppercase flex items-center justify-center gap-1 cursor-pointer transition-all rounded-sm box-glow-cyan"
                       >
                         <Plus className="w-3.5 h-3.5" /> MOUNT ILLUSTRATION SLOT
                       </button>
@@ -384,7 +384,7 @@ export default function App() {
 
                     {/* Current list manager */}
                     <div className="space-y-2">
-                      <div className="text-[9px] font-title text-zinc-400 uppercase tracking-widest">
+                      <div className="text-xs font-title text-zinc-400 uppercase tracking-widest">
                         // ACTIVE BANNER SLOTS ({illustrations.length})
                       </div>
                       
@@ -402,10 +402,10 @@ export default function App() {
                                 className="w-10 h-10 object-cover border border-zinc-950 flex-shrink-0 rounded-xs"
                               />
                               <div className="min-w-0">
-                                <h4 className="font-title text-[10px] text-white truncate uppercase tracking-wider">
+                                <h4 className="font-title text-xs text-white truncate uppercase tracking-wider">
                                   {item.title}
                                 </h4>
-                                <p className="text-[9px] text-zinc-500 truncate font-mono">
+                                <p className="text-xs text-zinc-500 truncate font-mono">
                                   Index slot #{index + 1}
                                 </p>
                               </div>
@@ -424,7 +424,7 @@ export default function App() {
                     </div>
                   </div>
                 ) : (
-                  <p className="text-xs text-zinc-400 font-sans leading-relaxed">
+                  <p className="text-base text-zinc-400 font-sans leading-relaxed">
                     You can dynamically update and test the scrolling galleries directly in this applet! Click the customizer button above to add your own external illustration links, drawing art seeds, or remove active ones.
                   </p>
                 )}
@@ -439,22 +439,22 @@ export default function App() {
           {/* Core Footer Element */}
           <footer className="border-t-4 border-pink-500 bg-zinc-950 py-8 px-4 text-center mt-12 relative z-20">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-              <span className="font-title text-[10px] text-zinc-500 uppercase tracking-widest">
+              <span className="font-title text-xs text-zinc-500 uppercase tracking-widest">
                 © {new Date().getFullYear()} NEONBANDIT • ALL GLITCH PROTOCOLS RESERVED
               </span>
 
               <div className="flex gap-4">
                 <a
                   href="https://github.com/FippyChannel"
-                  className="font-title text-[9px] text-zinc-400 hover:text-cyan-400 tracking-wider transition-colors uppercase"
+                  className="font-title text-xs text-zinc-400 hover:text-cyan-400 tracking-wider transition-colors uppercase"
                 >
                   // Github
                 </a>
                 <a
                   href="https://artfight.net/~NEONbandit"
-                  className="font-title text-[9px] text-zinc-400 hover:text-pink-500 tracking-wider transition-colors uppercase"
+                  className="font-title text-xs text-zinc-400 hover:text-pink-500 tracking-wider transition-colors uppercase"
                 >
-                  // ArtFight
+                  // Artfight
                 </a>
               </div>
             </div>

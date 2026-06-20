@@ -95,10 +95,10 @@ export default function Guestbook() {
       </div>
 
       <div className="flex items-center justify-between border-b-2 border-dashed border-zinc-800 pb-2">
-        <span className="font-title text-[10px] text-pink-500 uppercase tracking-widest flex items-center gap-1.5">
+        <span className="font-title text-xs text-pink-500 uppercase tracking-widest flex items-center gap-1.5">
           <FileSignature className="w-3.5 h-3.5" /> SIGN THE GUESTBOOK
         </span>
-        <span className="font-title text-[8px] text-zinc-600">
+        <span className="font-title text-xs text-zinc-600">
           SECURE_BBS_V2
         </span>
       </div>
@@ -107,7 +107,7 @@ export default function Guestbook() {
       <form onSubmit={handleSign} className="flex flex-col gap-3">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="flex flex-col gap-1">
-            <label className="font-title text-[9px] text-zinc-400 uppercase tracking-wider">
+            <label className="font-title text-xs text-zinc-400 uppercase tracking-wider">
               Codename / Signature
             </label>
             <input
@@ -121,7 +121,7 @@ export default function Guestbook() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="font-title text-[9px] text-zinc-400 uppercase tracking-wider">
+            <label className="font-title text-xs text-zinc-400 uppercase tracking-wider">
               Attach Sticker Stamp
             </label>
             <div className="flex gap-1.5 justify-between py-1 bg-zinc-900/40 px-2 border border-zinc-800 rounded-sm">
@@ -145,7 +145,7 @@ export default function Guestbook() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="font-title text-[9px] text-zinc-400 uppercase tracking-wider">
+          <label className="font-title text-xs text-zinc-400 uppercase tracking-wider">
             Secure Message Transmission
           </label>
           <textarea
@@ -160,7 +160,7 @@ export default function Guestbook() {
 
         <button
           type="submit"
-          className="w-full py-2.5 bg-pink-500 hover:bg-pink-600 text-white font-title text-center text-[10px] tracking-widest cursor-pointer flex items-center justify-center gap-2 border-2 border-pink-400 select-none box-glow-pink transition-all duration-300 rounded-sm"
+          className="w-full py-2.5 bg-pink-500 hover:bg-pink-600 text-white font-title text-center text-xs tracking-widest cursor-pointer flex items-center justify-center gap-2 border-2 border-pink-400 select-none box-glow-pink transition-all duration-300 rounded-sm"
         >
           <Send className="w-3.5 h-3.5 animate-pulse" /> TRANSMIT TO BULLETIN
         </button>
@@ -168,7 +168,7 @@ export default function Guestbook() {
 
       {/* Message Bulletin List (Scrollable) */}
       <div className="border border-zinc-800 bg-zinc-950/80 rounded-sm mt-2 max-h-60 overflow-y-auto">
-        <div className="bg-zinc-900 border-b border-zinc-800 px-3 py-1.5 flex justify-between items-center text-[9px] font-title">
+        <div className="bg-zinc-900 border-b border-zinc-800 px-3 py-1.5 flex justify-between items-center text-xs font-title">
           <span className="text-cyan-400 uppercase tracking-wide flex items-center gap-1">
             <MessageSquare className="w-3 h-3" /> BBS WALL POSTS
           </span>
@@ -176,7 +176,7 @@ export default function Guestbook() {
         </div>
 
         {entries.length === 0 ? (
-          <div className="p-4 text-center font-sans text-xs text-zinc-500">
+          <div className="p-4 text-center font-sans text-sm text-zinc-500">
             No entries found. Be the first to append to the system logs!
           </div>
         ) : (
@@ -193,11 +193,11 @@ export default function Guestbook() {
 
                 <div className="flex-1 min-w-0">
                   <div className="flex justify-between items-center">
-                    <span className="font-title text-[10px] text-cyan-400 tracking-wide truncate">
+                    <span className="font-title text-xs text-cyan-400 tracking-wide truncate">
                       {item.name}
                     </span>
                     <div className="flex items-center gap-2">
-                      <span className="font-mono text-[9px] text-zinc-600">
+                      <span className="font-mono text-xs text-zinc-600">
                         {item.timestamp}
                       </span>
                       <button
@@ -209,7 +209,7 @@ export default function Guestbook() {
                       </button>
                     </div>
                   </div>
-                  <p className="text-xs font-sans text-zinc-300 mt-1 break-words sm:text-sm">
+                  <p className="text-sm font-sans text-zinc-300 mt-1 break-words sm:text-base">
                     {item.message}
                   </p>
                 </div>

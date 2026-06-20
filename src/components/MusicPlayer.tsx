@@ -89,10 +89,10 @@ export default function MusicPlayer() {
       </div>
 
       <div className="flex items-center justify-between border-b-2 border-dashed border-zinc-800 pb-2">
-        <span className="font-title text-[10px] text-cyan-400 uppercase tracking-widest flex items-center gap-1.5">
+        <span className="font-title text-xs text-cyan-400 uppercase tracking-widest flex items-center gap-1.5">
           <Music className="w-3.5 h-3.5" /> VA-11 JUKEBOX ENGINE
         </span>
-        <span className="font-press-start text-[8px] text-zinc-600 animate-pulse">
+        <span className="font-press-start text-xs text-zinc-600 animate-pulse">
           STATUS: ONLINE
         </span>
       </div>
@@ -104,16 +104,16 @@ export default function MusicPlayer() {
 
         <div className="flex justify-between items-start">
           <div className="flex-1">
-            <span className="text-[9px] font-title text-pink-500 block uppercase tracking-widest mb-1">
+            <span className="text-xs font-title text-pink-500 block uppercase tracking-widest mb-1">
               Now Playing //
             </span>
             <h3 className="font-title text-base sm:text-lg text-white text-glow-white tracking-widest leading-none">
               {currentTrack.title}
             </h3>
-            <span className="text-xs text-zinc-400 font-sans mt-1 block">
+            <span className="text-sm text-zinc-400 font-sans mt-1 block">
               Composer: {currentTrack.artist}
             </span>
-            <span className="text-[10px] text-zinc-500 font-sans block mt-0.5">
+            <span className="text-xs text-zinc-500 font-sans block mt-0.5">
               Genre: {currentTrack.genre} • {currentTrack.tempo}
             </span>
           </div>
@@ -155,7 +155,7 @@ export default function MusicPlayer() {
               style={{ width: `${progress}%` }}
             />
           </div>
-          <div className="flex justify-between font-sans text-[10px] text-zinc-500">
+          <div className="flex justify-between font-sans text-xs text-zinc-500">
             <span>{formatTime(trackSeconds)}</span>
             <span>{currentTrack.duration}</span>
           </div>
@@ -165,10 +165,10 @@ export default function MusicPlayer() {
       {/* Playlist Selector (Scrollable) */}
       <div className="border border-zinc-800 bg-zinc-950 rounded-sm overflow-hidden">
         <div className="bg-zinc-900 border-b border-zinc-800 px-3 py-1.5 flex justify-between items-center">
-          <span className="font-title text-[9px] text-pink-500 uppercase tracking-wider">
+          <span className="font-title text-xs text-pink-500 uppercase tracking-wider">
             Tape Queue Selector
           </span>
-          <span className="text-[10px] text-zinc-500 font-sans font-bold">
+          <span className="text-xs text-zinc-500 font-sans font-bold">
             {TRACKS.length} JAMS
           </span>
         </div>
@@ -189,12 +189,12 @@ export default function MusicPlayer() {
               }`}
             >
               <div className="truncate flex items-center gap-2">
-                <span className="font-mono text-[9px] text-zinc-600 block w-4">
+                <span className="font-mono text-xs text-zinc-600 block w-4">
                   {(index + 1).toString().padStart(2, "0")}
                 </span>
                 <span className="truncate">{t.title}</span>
               </div>
-              <span className="text-[10px] font-mono text-zinc-500 flex-shrink-0">
+              <span className="text-xs font-mono text-zinc-500 flex-shrink-0">
                 {t.duration}
               </span>
             </button>

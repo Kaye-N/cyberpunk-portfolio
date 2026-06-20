@@ -57,13 +57,13 @@ export default function FF14Panel() {
         <div className="flex items-center gap-2">
           {/* Custom CSS Stylized Meteor Crest */}
           <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-rose-600 via-pink-500 to-amber-400 flex items-center justify-center border border-zinc-950/80 shadow-[0_0_8px_rgba(239,68,68,0.5)]">
-            <span className="text-[10px] font-title text-black font-extrabold select-none">XIV</span>
+            <span className="text-xs font-title text-black font-extrabold select-none">XIV</span>
           </div>
           <div>
-            <h3 className="font-title text-[11px] text-cyan-400 uppercase tracking-widest leading-none">
+            <h3 className="font-title text-sm text-cyan-400 uppercase tracking-widest leading-none">
               FINAL FANTASY XIV
             </h3>
-            <span className="text-[8px] font-mono text-zinc-500 uppercase tracking-tighter">
+            <span className="text-xs font-mono text-zinc-500 uppercase tracking-tighter">
               Aetherial Link Established
             </span>
           </div>
@@ -71,7 +71,7 @@ export default function FF14Panel() {
 
         <button
           onClick={isEditing ? handleSave : () => setIsEditing(true)}
-          className="text-[9px] font-title px-2 py-1 rounded-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1 border border-cyan-400/30 text-cyan-400 hover:text-white hover:border-cyan-400"
+          className="text-xs font-title px-2 py-1 rounded-xs uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1 border border-cyan-400/30 text-cyan-400 hover:text-white hover:border-cyan-400"
         >
           {isEditing ? (
             <>
@@ -88,65 +88,65 @@ export default function FF14Panel() {
       {isEditing ? (
         <div className="space-y-3.5 bg-zinc-900/40 p-3.5 border border-zinc-800/80 rounded-sm">
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-title text-zinc-400 uppercase tracking-wider">
+            <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
               Character Name / Alias
             </label>
             <input
               type="text"
               value={characterName}
               onChange={(e) => setCharacterName(e.target.value)}
-              className="px-2 py-1.5 bg-zinc-950 border border-zinc-800 text-xs text-white focus:outline-none focus:border-cyan-400 rounded-sm"
+              className="px-2 py-1.5 bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-cyan-400 rounded-sm"
               placeholder="e.g. Neon Bandit"
             />
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-title text-zinc-400 uppercase tracking-wider">
+            <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
               Datacenter & Server
             </label>
             <input
               type="text"
               value={serverAddress}
               onChange={(e) => setServerAddress(e.target.value)}
-              className="px-2 py-1.5 bg-zinc-950 border border-zinc-800 text-xs text-white focus:outline-none focus:border-cyan-400 rounded-sm"
+              className="px-2 py-1.5 bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-cyan-400 rounded-sm"
               placeholder="e.g. Aether - Gilgamesh"
             />
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-title text-zinc-400 uppercase tracking-wider">
+            <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
               Main Job / Role
             </label>
             <input
               type="text"
               value={mainJob}
               onChange={(e) => setMainJob(e.target.value)}
-              className="px-2 py-1.5 bg-zinc-950 border border-zinc-800 text-xs text-white focus:outline-none focus:border-cyan-400 rounded-sm"
+              className="px-2 py-1.5 bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-cyan-400 rounded-sm"
               placeholder="e.g. Pictomancer (Lvl 100)"
             />
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-title text-zinc-400 uppercase tracking-wider">
+            <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
               Free Company / Title
             </label>
             <input
               type="text"
               value={freeCompany}
               onChange={(e) => setFreeCompany(e.target.value)}
-              className="px-2 py-1.5 bg-zinc-950 border border-zinc-800 text-xs text-white focus:outline-none focus:border-cyan-400 rounded-sm"
+              className="px-2 py-1.5 bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-cyan-400 rounded-sm"
               placeholder="e.g. Active Member of <GLITCH>"
             />
           </div>
 
           <div className="flex flex-col gap-1">
-            <label className="text-[9px] font-title text-zinc-400 uppercase tracking-wider">
+            <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
               Active Quest / Progression Goal
             </label>
             <textarea
               value={currentGoal}
               onChange={(e) => setCurrentGoal(e.target.value)}
-              className="px-2 py-1.5 bg-zinc-950 border border-zinc-800 text-xs text-white focus:outline-none focus:border-cyan-400 rounded-sm h-16 resize-none"
+              className="px-2 py-1.5 bg-zinc-950 border border-zinc-800 text-sm text-white focus:outline-none focus:border-cyan-400 rounded-sm h-16 resize-none"
               placeholder="What are you currently working on in Eorzea?"
             />
           </div>
@@ -159,13 +159,13 @@ export default function FF14Panel() {
               <Shield className="w-5 h-5 text-glow-pink" />
             </div>
             <div className="min-w-0">
-              <div className="text-[8px] font-mono text-zinc-500 uppercase tracking-wider">
+              <div className="text-xs font-mono text-zinc-500 uppercase tracking-wider">
                 CHARACTER DESIGNATION
               </div>
-              <h4 className="font-title text-sm text-white uppercase tracking-wide truncate">
+              <h4 className="font-title text-base text-white uppercase tracking-wide truncate">
                 {characterName}
               </h4>
-              <p className="text-[10px] text-cyan-400 font-mono leading-none mt-0.5">
+              <p className="text-xs text-cyan-400 font-mono leading-none mt-0.5">
                 {serverAddress}
               </p>
             </div>
@@ -176,31 +176,31 @@ export default function FF14Panel() {
             {/* Main Job */}
             <div className="border border-zinc-800/80 bg-zinc-900/30 p-2 rounded-sm flex items-center gap-3">
               <Swords className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-              <div className="min-w-0">
-                <span className="text-[7px] font-mono text-zinc-500 uppercase block">Main Class</span>
-                <span className="text-xs text-zinc-300 font-sans tracking-wide truncate block">{mainJob}</span>
+              <div className="min-w-0 font-sans">
+                <span className="text-xs font-mono text-zinc-500 uppercase block">Main Class</span>
+                <span className="text-sm text-zinc-300 tracking-wide truncate block">{mainJob}</span>
               </div>
             </div>
 
             {/* FC info */}
             <div className="border border-zinc-800/80 bg-zinc-900/30 p-2 rounded-sm flex items-center gap-3">
               <Award className="w-4 h-4 text-pink-500 flex-shrink-0" />
-              <div className="min-w-0">
-                <span className="text-[7px] font-mono text-zinc-500 uppercase block">Free Company</span>
-                <span className="text-xs text-zinc-300 font-sans tracking-wide truncate block">{freeCompany}</span>
+              <div className="min-w-0 font-sans">
+                <span className="text-xs font-mono text-zinc-500 uppercase block">Free Company</span>
+                <span className="text-sm text-zinc-300 tracking-wide truncate block">{freeCompany}</span>
               </div>
             </div>
 
             {/* Current Focus */}
             <div className="border border-zinc-800/80 bg-zinc-900/30 p-2.5 rounded-sm relative">
-              <span className="absolute top-1 right-2 text-[6px] font-mono text-cyan-400 uppercase animate-pulse">
+              <span className="absolute top-1 right-2 text-xs font-mono text-cyan-400 uppercase animate-pulse">
                 ACTIVE DUTY
               </span>
               <div className="flex items-start gap-2.5">
                 <Compass className="w-4 h-4 text-amber-500 flex-shrink-0 mt-0.5" />
-                <div className="min-w-0">
-                  <span className="text-[7px] font-mono text-zinc-500 uppercase block">Current Goal</span>
-                  <p className="text-xs text-zinc-400 font-sans leading-relaxed mt-0.5">
+                <div className="min-w-0 font-sans">
+                  <span className="text-xs font-mono text-zinc-500 uppercase block">Current Goal</span>
+                  <p className="text-sm text-zinc-400 leading-relaxed mt-0.5">
                     {currentGoal}
                   </p>
                 </div>
@@ -209,7 +209,7 @@ export default function FF14Panel() {
           </div>
 
           {/* Dynamic footer status */}
-          <div className="flex items-center justify-between mt-1 pt-1.5 border-t border-zinc-900 text-[8px] font-mono text-zinc-500">
+          <div className="flex items-center justify-between mt-1 pt-1.5 border-t border-zinc-900 text-xs font-mono text-zinc-500">
             <span>REGION: NORTH AMERICA</span>
             <span className="flex items-center gap-1 text-emerald-500">
               <CheckCircle2 className="w-2.5 h-2.5" /> ONLINE

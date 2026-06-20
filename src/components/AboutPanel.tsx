@@ -104,7 +104,7 @@ export default function AboutPanel({
 
       {/* Mood Picker */}
       <div className="border border-zinc-800 bg-zinc-900/60 p-3 rounded-sm">
-        <div className="font-title text-[10px] text-cyan-400 uppercase tracking-widest mb-2 flex items-center gap-1.5">
+        <div className="font-title text-xs text-cyan-400 uppercase tracking-widest mb-2 flex items-center gap-1.5">
           <Flame className="w-3.5 h-3.5" /> Set Core Mood Matrix
         </div>
         <div className="grid grid-cols-2 xs:grid-cols-4 gap-2">
@@ -112,7 +112,7 @@ export default function AboutPanel({
             <button
               key={m.id}
               onClick={() => setMood(m.id)}
-              className={`p-1.5 border-2 text-[10px] font-title uppercase flex flex-col items-center justify-center gap-1 cursor-pointer transition-all duration-200 rounded-sm ${
+              className={`p-1.5 border-2 text-xs font-title uppercase flex flex-col items-center justify-center gap-1 cursor-pointer transition-all duration-200 rounded-sm ${
                 mood === m.id
                   ? "bg-pink-500/20 border-pink-500 text-pink-500 shadow-[0_0_8px_rgba(236,72,153,0.3)]"
                   : "bg-zinc-950 border-zinc-800 text-zinc-400 hover:border-zinc-700 hover:text-white"
@@ -123,9 +123,9 @@ export default function AboutPanel({
             </button>
           ))}
         </div>
-        <div className="mt-3 text-xs text-zinc-300 tracking-wide font-medium">
+        <div className="mt-3 text-sm text-zinc-300 tracking-wide font-medium">
           Current Mood:{" "}
-          <span className="text-pink-400 uppercase font-title text-[10px]">
+          <span className="text-pink-400 uppercase font-title text-xs">
             {mood}
           </span>
         </div>
@@ -134,12 +134,12 @@ export default function AboutPanel({
       {/* Interactive Biography */}
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
-          <div className="font-title text-[10px] text-pink-500 uppercase tracking-widest">
+          <div className="font-title text-xs text-pink-500 uppercase tracking-widest">
             // PROFILE STATEMENT
           </div>
           <button
             onClick={() => setIsEditingBio(!isEditingBio)}
-            className="text-[10px] font-title uppercase text-cyan-400 hover:text-white border border-cyan-400/40 hover:border-cyan-400 px-1.5 py-0.5 cursor-pointer rounded-sm"
+            className="text-xs font-title uppercase text-cyan-400 hover:text-white border border-cyan-400/40 hover:border-cyan-400 px-1.5 py-0.5 cursor-pointer rounded-sm"
           >
             {isEditingBio ? "Done" : "Edit Bio"}
           </button>
@@ -149,10 +149,10 @@ export default function AboutPanel({
           <textarea
             value={customBio}
             onChange={(e) => setCustomBio(e.target.value)}
-            className="w-full h-24 bg-zinc-950 border-2 border-pink-500 p-2 text-xs font-sans text-white focus:outline-none focus:border-cyan-400 box-glow-cyan"
+            className="w-full h-24 bg-zinc-950 border-2 border-pink-500 p-2 text-sm font-sans text-white focus:outline-none focus:border-cyan-400 box-glow-cyan"
           />
         ) : (
-          <p className="text-sm text-zinc-300 leading-relaxed font-sans bg-zinc-900/30 p-3 border border-zinc-800 rounded-sm">
+          <p className="text-base text-zinc-300 leading-relaxed font-sans bg-zinc-900/30 p-3 border border-zinc-800 rounded-sm">
             {customBio}
           </p>
         )}
@@ -160,7 +160,7 @@ export default function AboutPanel({
 
       {/* Interactive Links Frame (ArtFight and GitHub) */}
       <div className="flex flex-col gap-2 border-t-2 border-dashed border-zinc-800 pt-5 mt-auto">
-        <div className="font-title text-[10px] text-zinc-400 uppercase tracking-widest mb-1">
+        <div className="font-title text-xs text-zinc-400 uppercase tracking-widest mb-1">
           // ACCESS PORTAL CHANNELS
         </div>
         <div className="grid grid-cols-2 gap-3">
@@ -172,7 +172,7 @@ export default function AboutPanel({
             className="group px-3 py-3 border-2 border-cyan-400 hover:border-pink-500 bg-zinc-950 text-white hover:bg-zinc-900 transition-all duration-300 flex items-center justify-center gap-2 box-glow-cyan hover:box-glow-pink cursor-pointer rounded-sm"
           >
             <Github className="w-5 h-5 group-hover:scale-110 group-hover:text-pink-500 transition-all duration-300" />
-            <span className="font-title text-[10px] tracking-wide uppercase group-hover:text-glow-pink">
+            <span className="font-title text-xs tracking-wide uppercase group-hover:text-glow-pink">
               GITHUB
             </span>
           </a>
@@ -185,7 +185,7 @@ export default function AboutPanel({
             className="group px-3 py-3 border-2 border-pink-500 hover:border-cyan-400 bg-zinc-950 text-white hover:bg-zinc-900 transition-all duration-300 flex items-center justify-center gap-2 box-glow-pink hover:box-glow-cyan cursor-pointer rounded-sm"
           >
             <Heart className="w-5 h-5 group-hover:scale-110 group-hover:text-cyan-400 transition-all duration-300" />
-            <span className="font-title text-[10px] tracking-wide uppercase group-hover:text-glow-cyan">
+            <span className="font-title text-xs tracking-wide uppercase group-hover:text-glow-cyan">
               ARTFIGHT
             </span>
           </a>
@@ -193,7 +193,7 @@ export default function AboutPanel({
       </div>
 
       {/* Additional widget: Location/Hometown badge */}
-      <div className="text-[10px] font-title text-zinc-500 tracking-widest flex items-center justify-center gap-1.5 uppercase mt-1">
+      <div className="text-xs font-title text-zinc-500 tracking-widest flex items-center justify-center gap-1.5 uppercase mt-1">
         <MapPin className="w-3.5 h-3.5 text-cyan-400" /> Glitch City, Sector 23
       </div>
     </div>
