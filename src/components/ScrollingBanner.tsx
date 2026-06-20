@@ -12,7 +12,7 @@ export default function ScrollingBanner({
   direction,
   onSelectImage,
 }: ScrollingBannerProps) {
-  const doubledItems = [...PIXEL_ITEMS, ...PIXEL_ITEMS];
+  const tripleItems = [...PIXEL_ITEMS, ...PIXEL_ITEMS, ...PIXEL_ITEMS];
 
   return (
     <div
@@ -28,7 +28,7 @@ export default function ScrollingBanner({
             : "animate-scroll-right flex gap-10 sm:gap-20 pr-10 sm:pr-20"
         }
       >
-        {doubledItems.map((item, index) => {
+        {tripleItems.map((item, index) => {
           const adaptedItem = {
             id: item.id,
             url: item.id,
@@ -56,7 +56,7 @@ export default function ScrollingBanner({
                 className="w-full h-full object-contain filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] transition-transform duration-300 group-hover:scale-110"
               />
 
-              <div className="absolute bottom-[1px] right-[2px] bg-zinc-950/90 px-0.5 text-[4px] font-mono tracking-tight text-zinc-500 scale-90 origin-bottom-right">
+              <div className="absolute bottom-[1px] right-[2px] bg-zinc-950/90 px-0.5 text-[10px] font-mono tracking-tight text-zinc-500 scale-90 origin-bottom-right">
                 {(index % PIXEL_ITEMS.length + 1).toString().padStart(2, "0")}
               </div>
             </div>

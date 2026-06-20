@@ -171,7 +171,7 @@ export default function App() {
       {hasEntered && (
         <div
           id="main-applet-homepage"
-          className="relative min-h-screen w-full bg-cover bg-center bg-fixed"
+          className="relative min-h-screen w-full bg-cover bg-center"
           style={{
             backgroundImage: `linear-gradient(to bottom, rgba(13, 7, 20, 0.94), rgba(3, 1, 5, 0.96)), url(${cyberpunkPixelCity})`,
           }}
@@ -186,10 +186,10 @@ export default function App() {
           {/* Central Aesthetic Header Area */}
           <header id="site-hero-header" className="max-w-7xl mx-auto pt-8 pb-4 px-4 text-center flex flex-col items-center">
             {/* Soft white glowing site title */}
-            <h1 className="font-title text-2xl sm:text-4xl text-white text-glow-white tracking-[0.2em] font-bold uppercase select-none mt-2">
+            <h1 className="font-title text-3xl sm:text-5xl text-white text-glow-white tracking-[0.2em] font-bold uppercase select-none mt-2">
               NEONBANDIT STREET
             </h1>
-            <p className="mt-1 font-title text-sm text-zinc-500 tracking-widest uppercase">
+            <p className="mt-2 font-title text-base sm:text-lg text-zinc-500 tracking-widest uppercase">
               // Cyberpunk Bartender Showcase // Glitch Sector 23 //
             </p>
 
@@ -227,13 +227,13 @@ export default function App() {
               <div className="border-4 border-dashed border-cyan-400 p-4 bg-zinc-950/90 rounded-sm relative shadow-[0_0_10px_rgba(6,182,212,0.15)] flex gap-3.5 items-start">
                 <Hammer className="w-8 h-8 text-pink-500 animate-bounce flex-shrink-0" />
                 <div className="flex-1 min-w-0">
-                  <div className="font-title text-sm text-pink-500 uppercase tracking-widest flex items-center justify-between">
+                  <div className="font-title text-base text-pink-500 uppercase tracking-widest flex items-center justify-between">
                     <span>SYSTEM NOTIFICATION</span>
-                    <span className="text-xs border border-pink-500 px-1 py-0.5 animate-pulse text-zinc-400">
+                    <span className="text-sm border border-pink-500 px-2 py-1 animate-pulse text-zinc-400">
                       WIP
                     </span>
                   </div>
-                  <h4 className="font-title text-base text-white uppercase tracking-wider mt-1.5">
+                  <h4 className="font-title text-lg text-white uppercase tracking-wider mt-1.5">
                     UNDER CONSTRUCTION
                   </h4>
                   <p className="text-base text-zinc-400 font-sans mt-1 leading-snug">
@@ -276,10 +276,10 @@ export default function App() {
                   
                   <div className="sm:col-span-8 space-y-2">
                     <div className="flex items-center gap-2">
-                      <span className="bg-pink-500/15 border border-pink-500 text-pink-500 font-title text-xs px-1.5 py-0.5 uppercase tracking-widest animate-pulse">
+                      <span className="bg-pink-500/15 border border-pink-500 text-pink-500 font-title text-sm px-2 py-1 uppercase tracking-widest animate-pulse">
                         COMMISSIONS: OPEN
                       </span>
-                      <span className="font-mono text-xs text-zinc-500">
+                      <span className="font-mono text-sm text-zinc-500">
                         Updated 2 days ago
                       </span>
                     </div>
@@ -291,7 +291,7 @@ export default function App() {
                         href="https://vgen.co/NEONbandit"
                         target="_blank"
                         rel="noopener"
-                        className="text-xs font-title text-cyan-400 hover:text-white border-b border-cyan-400 hover:border-white transition-colors uppercase tracking-wider block"
+                        className="text-sm font-title text-cyan-400 hover:text-white border-b border-cyan-400 hover:border-white transition-colors uppercase tracking-wider block"
                       >
                         [ VIEW COMMS PRICE SHEET ]
                       </a>
@@ -312,12 +312,12 @@ export default function App() {
                 className="border-4 border-zinc-800 bg-zinc-950 p-5 rounded-sm relative"
               >
                 <div className="flex justify-between items-center border-b border-zinc-800 pb-2.5 mb-4">
-                  <div className="font-title text-xs text-zinc-400 uppercase tracking-widest flex items-center gap-1.5">
+                  <div className="font-title text-sm text-zinc-400 uppercase tracking-widest flex items-center gap-1.5">
                     <Sparkles className="w-4 h-4 text-cyan-400" /> BANNER SLOT CONTROLLER
                   </div>
                   <button
                     onClick={() => setShowConfig(!showConfig)}
-                    className="text-xs font-title border border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 px-3 py-1 cursor-pointer transition-colors uppercase rounded-xs"
+                    className="text-sm font-title border border-zinc-700 hover:border-cyan-400 hover:text-cyan-400 px-3 py-1 cursor-pointer transition-colors uppercase rounded-xs"
                   >
                     {showConfig ? "[ Close Editor ]" : "[ Edit Banner Illustrations ]"}
                   </button>
@@ -327,13 +327,13 @@ export default function App() {
                   <div className="space-y-5">
                     {/* Add form */}
                     <form onSubmit={handleAddIllustration} className="space-y-3 bg-zinc-900 p-4 border border-zinc-800 rounded-sm">
-                      <div className="text-xs font-title text-pink-500 uppercase tracking-widest">
+                      <div className="text-sm font-title text-pink-500 uppercase tracking-widest">
                         // ADD CUSTOM ILLUSTRATION TO SCROLLING MARQUEE
                       </div>
                       
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         <div className="flex flex-col gap-1">
-                          <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
+                          <label className="text-sm font-title text-zinc-400 uppercase tracking-wider">
                             Illustration Title
                           </label>
                           <input
@@ -347,7 +347,7 @@ export default function App() {
                         </div>
                         
                         <div className="flex flex-col gap-1">
-                          <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
+                          <label className="text-sm font-title text-zinc-400 uppercase tracking-wider">
                             Direct Image Link / URL or Picsum Seed
                           </label>
                           <input
@@ -362,7 +362,7 @@ export default function App() {
                       </div>
 
                       <div className="flex flex-col gap-1">
-                        <label className="text-xs font-title text-zinc-400 uppercase tracking-wider">
+                          <label className="text-sm font-title text-zinc-400 uppercase tracking-wider">
                           Description Log (shows when clicked in banner)
                         </label>
                         <textarea
@@ -376,7 +376,7 @@ export default function App() {
 
                       <button
                         type="submit"
-                        className="w-full sm:w-auto px-5 py-2.5 bg-cyan-500 hover:bg-cyan-600 border border-cyan-400 font-title text-xs tracking-wider text-white uppercase flex items-center justify-center gap-1 cursor-pointer transition-all rounded-sm box-glow-cyan"
+                        className="w-full sm:w-auto px-5 py-2.5 bg-cyan-500 hover:bg-cyan-600 border border-cyan-400 font-title text-sm tracking-wider text-white uppercase flex items-center justify-center gap-1 cursor-pointer transition-all rounded-sm box-glow-cyan"
                       >
                         <Plus className="w-3.5 h-3.5" /> MOUNT ILLUSTRATION SLOT
                       </button>
@@ -384,7 +384,7 @@ export default function App() {
 
                     {/* Current list manager */}
                     <div className="space-y-2">
-                      <div className="text-xs font-title text-zinc-400 uppercase tracking-widest">
+                      <div className="text-sm font-title text-zinc-400 uppercase tracking-widest">
                         // ACTIVE BANNER SLOTS ({illustrations.length})
                       </div>
                       
@@ -402,10 +402,10 @@ export default function App() {
                                 className="w-10 h-10 object-cover border border-zinc-950 flex-shrink-0 rounded-xs"
                               />
                               <div className="min-w-0">
-                                <h4 className="font-title text-xs text-white truncate uppercase tracking-wider">
+                                <h4 className="font-title text-sm text-white truncate uppercase tracking-wider">
                                   {item.title}
                                 </h4>
-                                <p className="text-xs text-zinc-500 truncate font-mono">
+                                <p className="text-sm text-zinc-500 truncate font-mono">
                                   Index slot #{index + 1}
                                 </p>
                               </div>
@@ -439,20 +439,20 @@ export default function App() {
           {/* Core Footer Element */}
           <footer className="border-t-4 border-pink-500 bg-zinc-950 py-8 px-4 text-center mt-12 relative z-20">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-              <span className="font-title text-xs text-zinc-500 uppercase tracking-widest">
+              <span className="font-title text-base text-zinc-500 uppercase tracking-widest">
                 © {new Date().getFullYear()} NEONBANDIT • ALL GLITCH PROTOCOLS RESERVED
               </span>
 
               <div className="flex gap-4">
                 <a
                   href="https://github.com/FippyChannel"
-                  className="font-title text-xs text-zinc-400 hover:text-cyan-400 tracking-wider transition-colors uppercase"
+                  className="font-title text-base text-zinc-400 hover:text-cyan-400 tracking-wider transition-colors uppercase"
                 >
                   // Github
                 </a>
                 <a
                   href="https://artfight.net/~NEONbandit"
-                  className="font-title text-xs text-zinc-400 hover:text-pink-500 tracking-wider transition-colors uppercase"
+                  className="font-title text-base text-zinc-400 hover:text-pink-500 tracking-wider transition-colors uppercase"
                 >
                   // Artfight
                 </a>
@@ -481,7 +481,7 @@ export default function App() {
                   <X className="w-5 h-5" />
                 </button>
 
-                <div className="font-title text-[8px] text-pink-500 uppercase tracking-widest mb-2 flex items-center gap-1">
+                <div className="font-title text-sm text-pink-500 uppercase tracking-widest mb-2 flex items-center gap-1">
                   <FolderOpen className="w-3.5 h-3.5" /> Illustration File viewer
                 </div>
 
@@ -513,7 +513,7 @@ export default function App() {
                 <div className="mt-4 flex gap-2.5 justify-end">
                   <button
                     onClick={() => setSelectedIllustration(null)}
-                    className="px-4 py-1.5 border-2 border-zinc-700 hover:border-pink-500 hover:text-glow-pink text-white font-title text-[9px] tracking-widest cursor-pointer hover:bg-zinc-900 transition-all uppercase rounded-sm"
+                    className="px-4 py-2 border-2 border-zinc-700 hover:border-pink-500 hover:text-glow-pink text-white font-title text-sm tracking-widest cursor-pointer hover:bg-zinc-900 transition-all uppercase rounded-sm"
                   >
                     DISMISS FILE
                   </button>
@@ -541,7 +541,7 @@ export default function App() {
                   <X className="w-5.5 h-5.5" />
                 </button>
 
-                <div className="font-title text-[8px] text-cyan-400 uppercase tracking-widest mb-2">
+                <div className="font-title text-sm text-cyan-400 uppercase tracking-widest mb-2">
                   // PROJECT CORE SPECIFICATIONS
                 </div>
 
@@ -562,12 +562,12 @@ export default function App() {
                   {selectedProject.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-[8px] font-title uppercase tracking-widest bg-zinc-900 border border-zinc-800 text-cyan-400 px-2 py-0.5 rounded-xs"
+                      className="text-sm font-title uppercase tracking-widest bg-zinc-900 border border-zinc-800 text-cyan-400 px-2 py-0.5 rounded-xs"
                     >
                       {tech}
                     </span>
                   ))}
-                  <span className="text-[8px] font-title uppercase tracking-widest bg-pink-500/10 border border-pink-500/20 text-pink-400 px-2 py-0.5 rounded-xs">
+                  <span className="text-sm font-title uppercase tracking-widest bg-zinc-950 border border-zinc-800 text-cyan-400 px-2 py-0.5 rounded-xs">
                     STABLE VERSION v1.0
                   </span>
                 </div>
@@ -578,8 +578,7 @@ export default function App() {
 
                 {/* Simulated action links */}
                 <div className="mt-5 pt-4 border-t border-zinc-800 flex flex-col sm:flex-row sm:justify-between items-center gap-3">
-                  <span className="text-[10px] font-mono text-zinc-500">
-                    ID_NODE: {selectedProject.id.toUpperCase()}_GLITCH_CELL
+                    <span className="text-sm font-mono text-zinc-500">
                   </span>
 
                   <div className="flex gap-3">
@@ -587,14 +586,14 @@ export default function App() {
                       href={selectedProject.githubUrl}
                       target="_blank"
                       rel="noopener"
-                      className="px-4 py-2 border border-zinc-800 hover:border-cyan-400 text-white bg-zinc-900/50 hover:bg-zinc-900 font-title text-[9px] uppercase tracking-wider flex items-center gap-1.5 rounded-sm shadow-[0_0_6px_rgba(255,255,255,0.05)] cursor-pointer"
+                      className="px-4 py-2 border border-zinc-800 hover:border-cyan-400 text-white bg-zinc-900/50 hover:bg-zinc-900 font-title text-sm uppercase tracking-wider flex items-center gap-1.5 rounded-sm shadow-[0_0_6px_rgba(255,255,255,0.05)] cursor-pointer"
                     >
                       <Github className="w-3.5 h-3.5" /> GITHUB REPO
                     </a>
                     
                     <button
                       onClick={() => alert(`Launching deployment node for ${selectedProject.title}...`)}
-                      className="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 border border-cyan-400 text-white font-title text-[9px] uppercase tracking-wider flex items-center gap-1.5 rounded-sm shadow-[0_0_8px_rgba(6,182,212,0.3)] cursor-pointer"
+                      className="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 border border-cyan-400 text-white font-title text-sm uppercase tracking-wider flex items-center gap-1.5 rounded-sm shadow-[0_0_8px_rgba(6,182,212,0.3)] cursor-pointer"
                     >
                       <ExternalLink className="w-3.5 h-3.5" /> LAUNCH DEPLOY
                     </button>

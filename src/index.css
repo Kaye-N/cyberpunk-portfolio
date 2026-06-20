@@ -7,15 +7,15 @@
   --font-press-start: "Press Start 2P", monospace;
 
   /* Elevate font sizes to compensate for the condensed VT323 retro pixel font */
-  --font-size-xs: 1.45rem;      /* Bumps up tiny metadata displays */
-  --font-size-sm: 1.75rem;      /* Great for list elements, buttons, cards */
-  --font-size-base: 2.1rem;     /* Normal reading content is now fully clear */
-  --font-size-lg: 2.5rem;       /* Headers and medium alert bands */
-  --font-size-xl: 3.2rem;       /* Primary module header titles */
-  --font-size-2xl: 4.4rem;      /* Hero logo display headers */
-  --font-size-3xl: 5.2rem;      /* Large title emphasis blocks */
-  --font-size-4xl: 6.2rem;      /* Extra-large emphasis blocks */
-  --font-size-5xl: 7.5rem;      /* Massively scaled hero banners */
+  --font-size-xs: 1.55rem;      /* Bumps up tiny metadata displays */
+  --font-size-sm: 1.9rem;       /* Great for list elements, buttons, cards */
+  --font-size-base: 2.3rem;     /* Normal reading content is now more readable */
+  --font-size-lg: 2.8rem;       /* Headers and medium alert bands */
+  --font-size-xl: 3.6rem;       /* Primary module header titles */
+  --font-size-2xl: 4.8rem;      /* Hero logo display headers */
+  --font-size-3xl: 5.8rem;      /* Large title emphasis blocks */
+  --font-size-4xl: 6.9rem;      /* Extra-large emphasis blocks */
+  --font-size-5xl: 8rem;        /* Massively scaled hero banners */
 }
 
 /* Custom styles for VA-11 HALL-A style Cyberpunk theme */
@@ -92,11 +92,11 @@
 /* Retro infinite scrolling animation */
 @keyframes scroll-left {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(calc(-100% / 3)); }
 }
 
 @keyframes scroll-right {
-  0% { transform: translateX(-50%); }
+  0% { transform: translateX(calc(-100% / 3)); }
   100% { transform: translateX(0); }
 }
 
