@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { Play, Pause, SkipForward, SkipBack, Music, Volume2 } from "lucide-react";
+import { useState, useEffect, useRef, ChangeEvent, SyntheticEvent } from "react";
+import { Play, Pause, SkipForward, SkipBack, Music, Volume2, Upload } from "lucide-react";
 
 interface Track {
   id: string;
@@ -8,6 +8,7 @@ interface Track {
   genre: string;
   duration: string;
   tempo: string;
+  src?: string;
 }
 
 const TRACKS: Track[] = [
@@ -19,14 +20,51 @@ const TRACKS: Track[] = [
 ];
 
 export default function MusicPlayer() {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(30); // Start at 30% for aesthetic visual
-  const [trackSeconds, setTrackSeconds] = useState(58); // Time tracking simulation
+  const [trackSeconds, setTrackSeconds] = useState(58); // Time tracking simulation or audio playback
   const [volume, setVolume] = useState(80);
   const [eqHeights, setEqHeights] = useState<number[]>([15, 45, 20, 35, 60, 25, 40, 50, 15, 30, 42, 24]);
+  const [customAudioUrl, setCustomAudioUrl] = useState<string | null>(null);
+  const [customTrackTitle, setCustomTrackTitle] = useState("Local MP3");
+  const [customTrackArtist, setCustomTrackArtist] = useState("Imported File");
+  const [customTrackDuration, setCustomTrackDuration] = useState("00:00");
+  const [loadError, setLoadError] = useState<string | null>(null);
 
-  const currentTrack = TRACKS[currentTrackIndex];
+  const isCustomTrack = Boolean(customAudioUrl);
+  const currentTrack = isCustomTrack
+    ? {
+        id: "custom-mp3",
+        title: customTrackTitle,
+        artist: customTrackArtist,
+        genre: "Imported MP3",
+        duration: customTrackDuration,
+        tempo: "--",
+        src: customAudioUrl,
+      }
+    : TRACKS[currentTrackIndex];
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume / 100;
+    }
+  }, [volume]);
+
+  useEffect(() => {
+    if (!audioRef.current) return;
+
+    if (isPlaying && customAudioUrl) {
+      audioRef.current
+        .play()
+        .catch(() => {
+          /* ignore autoplay failures */
+        });
+    } else {
+      audioRef.current.pause();
+    }
+  }, [isPlaying, customAudioUrl]);
 
   // Equalizer visualizer oscillation simulation
   useEffect(() => {
@@ -36,38 +74,107 @@ export default function MusicPlayer() {
         setEqHeights(
           Array.from({ length: 12 }, () => Math.floor(Math.random() * 70) + 10)
         );
-        // Slowly update simulated progress
-        setProgress((prev) => {
-          if (prev >= 100) {
-            handleNext();
-            return 0;
-          }
-          return prev + 0.4;
-        });
-        setTrackSeconds((prev) => prev + 1);
+        if (!isCustomTrack) {
+          setProgress((prev) => {
+            if (prev >= 100) {
+              handleNext();
+              return 0;
+            }
+            return prev + 0.4;
+          });
+          setTrackSeconds((prev) => prev + 1);
+        }
       }, 400);
     } else {
-      // Resting equalizer
       setEqHeights([5, 12, 8, 15, 10, 8, 12, 10, 5, 8, 6, 4]);
     }
 
     return () => clearInterval(eqInterval);
-  }, [isPlaying, currentTrackIndex]);
+  }, [isPlaying, currentTrackIndex, isCustomTrack]);
+
+  const loadLocalMp3 = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) {
+      setLoadError("No file selected. Please choose an .mp3 file.");
+      return;
+    }
+
+    const fileName = file.name.toLowerCase();
+    if (!fileName.endsWith(".mp3")) {
+      setLoadError("Incompatible file type. Please upload an .mp3 file.");
+      return;
+    }
+
+    const url = URL.createObjectURL(file);
+    if (customAudioUrl) {
+      URL.revokeObjectURL(customAudioUrl);
+    }
+
+    setLoadError(null);
+    setCustomAudioUrl(url);
+    setCustomTrackTitle(file.name.replace(/\.mp3$/i, ""));
+    setCustomTrackArtist("Local MP3");
+    setCustomTrackDuration("00:00");
+    setProgress(0);
+    setTrackSeconds(0);
+    setIsPlaying(true);
+  };
+
+  const handleAudioTimeUpdate = (event: SyntheticEvent<HTMLAudioElement>) => {
+    const audio = event.currentTarget;
+    if (!audio.duration || Number.isNaN(audio.duration)) return;
+
+    setProgress((audio.currentTime / audio.duration) * 100);
+    setTrackSeconds(audio.currentTime);
+  };
+
+  const handleLoadedMetadata = (event: SyntheticEvent<HTMLAudioElement>) => {
+    const audio = event.currentTarget;
+    if (!audio.duration || Number.isNaN(audio.duration)) return;
+
+    setCustomTrackDuration(formatTime(audio.duration));
+    if (isPlaying) {
+      audio.play().catch(() => {
+        /* ignore autoplay failures */
+      });
+    }
+  };
+
+  const handleAudioEnded = () => {
+    if (isCustomTrack) {
+      setIsPlaying(false);
+      setProgress(100);
+    } else {
+      handleNext();
+    }
+  };
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
 
   const handleNext = () => {
+    if (customAudioUrl) {
+      URL.revokeObjectURL(customAudioUrl);
+      setCustomAudioUrl(null);
+    }
+
     setCurrentTrackIndex((prev) => (prev + 1) % TRACKS.length);
     setProgress(0);
     setTrackSeconds(0);
+    setIsPlaying(true);
   };
 
   const handlePrev = () => {
+    if (customAudioUrl) {
+      URL.revokeObjectURL(customAudioUrl);
+      setCustomAudioUrl(null);
+    }
+
     setCurrentTrackIndex((prev) => (prev - 1 + TRACKS.length) % TRACKS.length);
     setProgress(0);
     setTrackSeconds(0);
+    setIsPlaying(true);
   };
 
   const formatTime = (totalSecs: number) => {
@@ -81,6 +188,15 @@ export default function MusicPlayer() {
       id="retro-jukebox-module"
       className="border-4 border-cyan-400 bg-zinc-950 p-5 shadow-[0_0_15px_rgba(6,182,212,0.3)] relative rounded-sm flex flex-col gap-4"
     >
+      <audio
+        ref={audioRef}
+        src={currentTrack.src ?? undefined}
+        preload="metadata"
+        onTimeUpdate={handleAudioTimeUpdate}
+        onLoadedMetadata={handleLoadedMetadata}
+        onEnded={handleAudioEnded}
+      />
+
       {/* Decorative cyber crosshairs */}
       <div className="absolute top-2 left-2 flex gap-1 pointer-events-none">
         <div className="w-1.5 h-1.5 bg-cyan-400" />
@@ -200,6 +316,38 @@ export default function MusicPlayer() {
             </button>
           ))}
         </div>
+      </div>
+
+      <div className="border border-zinc-800 bg-zinc-900/80 rounded-sm p-3">
+        <label className="flex items-center justify-between gap-2 text-sm text-zinc-200 cursor-pointer">
+          <span className="font-title uppercase tracking-widest text-cyan-400 flex items-center gap-2">
+            <Upload className="w-4 h-4" />
+            Load .MP3
+          </span>
+          <input
+            type="file"
+            accept="audio/mpeg,.mp3"
+            onChange={loadLocalMp3}
+            className="sr-only"
+          />
+        </label>
+        <p className="mt-2 text-xs text-zinc-500">
+          Select any .mp3 file to start playing real music.
+        </p>
+        {customAudioUrl && !loadError && (
+          <p className="mt-2 text-xs text-cyan-300 truncate">
+            Loaded: {customTrackTitle}
+          </p>
+        )}
+        {loadError ? (
+          <p className="mt-2 text-xs text-rose-400 font-bold">
+            {loadError}
+          </p>
+        ) : !customAudioUrl ? (
+          <p className="mt-2 text-xs text-zinc-400">
+            No MP3 loaded. Use the button above to upload an .mp3.
+          </p>
+        ) : null}
       </div>
 
       {/* Controls Container (Volume + Buttons) */}

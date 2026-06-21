@@ -186,8 +186,8 @@ export default function App() {
           {/* Central Aesthetic Header Area */}
           <header id="site-hero-header" className="max-w-7xl mx-auto pt-8 pb-4 px-4 text-center flex flex-col items-center">
             {/* Soft white glowing site title */}
-            <h1 className="font-title text-3xl sm:text-5xl text-white text-glow-white tracking-[0.2em] font-bold uppercase select-none mt-2">
-              NEONBANDIT STREET
+            <h1 className="font-title text-4xl sm:text-6xl lg:text-7xl text-white text-glow-white tracking-[0.2em] font-bold uppercase select-none mt-2">
+              Kaye&apos;s AlleyWay
             </h1>
             <p className="mt-2 font-title text-base sm:text-lg text-zinc-500 tracking-widest uppercase">
               // Cyberpunk Bartender Showcase // Glitch Sector 23 //

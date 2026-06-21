@@ -7,12 +7,40 @@ interface ScrollingBannerProps {
   onSelectImage: (img: { id: string; url: string; title: string; desc: string }) => void;
 }
 
+interface BannerTextItem {
+  id: string;
+  text: string;
+  isText: true;
+}
+
+type BannerScrollItem = (typeof PIXEL_ITEMS)[number] | BannerTextItem;
+
+const isTextItem = (item: BannerScrollItem): item is BannerTextItem =>
+  "isText" in item && item.isText;
+
 export default function ScrollingBanner({
   id,
   direction,
   onSelectImage,
 }: ScrollingBannerProps) {
-  const tripleItems = [...PIXEL_ITEMS, ...PIXEL_ITEMS, ...PIXEL_ITEMS];
+  const bannerText =
+    direction === "left"
+      ? "Welcome to Va11-Ha11a"
+      : "Cyberpunk Bartending Action";
+
+  const bannerTextItem: BannerTextItem = {
+    id: `${id}-banner-text`,
+    text: bannerText,
+    isText: true,
+  };
+
+  const bannerItems: BannerScrollItem[] = [
+    ...PIXEL_ITEMS,
+    bannerTextItem,
+    ...PIXEL_ITEMS,
+  ];
+
+  const loopItems = [...bannerItems, ...bannerItems];
 
   return (
     <div
@@ -24,11 +52,24 @@ export default function ScrollingBanner({
       <div
         className={
           direction === "left"
-            ? "animate-scroll-left flex gap-10 sm:gap-20 pr-10 sm:pr-20"
-            : "animate-scroll-right flex gap-10 sm:gap-20 pr-10 sm:pr-20"
+            ? "animate-scroll-left flex gap-10 sm:gap-20"
+            : "animate-scroll-right flex gap-10 sm:gap-20"
         }
       >
-        {tripleItems.map((item, index) => {
+        {loopItems.map((item, index) => {
+          if (isTextItem(item)) {
+            return (
+              <div
+                key={`${item.id}-${index}`}
+                className="relative flex-shrink-0 min-w-[16rem] sm:min-w-[20rem] bg-gradient-to-r from-zinc-950/90 via-zinc-900/80 to-zinc-950/90 px-4 py-3"
+              >
+                <span className="block text-[14px] sm:text-[20px] font-title uppercase tracking-[0.2em] text-white text-glow-pink leading-tight">
+                  {item.text}
+                </span>
+              </div>
+            );
+          }
+
           const adaptedItem = {
             id: item.id,
             url: item.id,
