@@ -55,7 +55,7 @@ export default function WelcomeScreen({ onEnter }: WelcomeScreenProps) {
             </button>
 
             {/* Footnote matching VA-11 HALL-A terminal vibe - positioned directly under the button */}
-            <span className="font-title text-[9px] sm:text-[10px] text-zinc-400 tracking-[0.2em] uppercase bg-black/90 px-4 py-2 border border-zinc-800 rounded-sm text-glow-white-soft mt-2">
+            <span className="font-title text-sm text-zinc-400 tracking-[0.2em] uppercase bg-black/90 px-4 py-2 border border-zinc-800 rounded-sm text-glow-white-soft mt-2">
               GLITCH_CITY // NET-PROTOCOLS // v1.1.0
             </span>
           </div>
@@ -73,7 +73,7 @@ export default function WelcomeScreen({ onEnter }: WelcomeScreenProps) {
                 className="h-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]"
               />
             </div>
-            <div className="font-sans text-xs text-cyan-400 font-bold uppercase tracking-widest animate-pulse">
+            <div className="font-sans text-sm text-cyan-400 font-bold uppercase tracking-widest animate-pulse">
               SUCCESSFUL HANDSHAKE
             </div>
           </div>

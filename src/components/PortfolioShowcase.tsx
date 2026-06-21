@@ -42,7 +42,7 @@ export default function PortfolioShowcase({
       </div>
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b-2 border-dashed border-zinc-800 pb-3 gap-3">
-        <span className="font-title text-xs text-cyan-400 uppercase tracking-widest flex items-center gap-1.5">
+        <span className="font-title text-sm text-cyan-400 uppercase tracking-widest flex items-center gap-1.5">
           <Layers className="w-4.5 h-4.5" /> PROJECT SHOWCASE DATABASE
         </span>
 
@@ -52,7 +52,7 @@ export default function PortfolioShowcase({
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-3 py-1 text-xs font-title uppercase tracking-wider cursor-pointer border transition-all duration-200 rounded-xs ${
+              className={`px-3 py-1 text-sm font-title uppercase tracking-wider cursor-pointer border transition-all duration-200 rounded-xs ${
                 activeTab === tab
                   ? "bg-cyan-500/10 border-cyan-400 text-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.25)]"
                   : "bg-zinc-900 border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-700"
@@ -92,7 +92,7 @@ export default function PortfolioShowcase({
                 />
 
                 {/* Cyberpunk Category tag overlay on top left */}
-                <span className="absolute top-2 left-2 bg-zinc-950/95 px-2 py-0.5 border border-zinc-800 rounded-sm text-xs font-title text-zinc-300 tracking-wider flex items-center gap-1">
+                <span className="absolute top-2 left-2 bg-zinc-950/95 px-2 py-0.5 border border-zinc-800 rounded-sm text-sm font-title text-zinc-300 tracking-wider flex items-center gap-1">
                   {getCategoryIcon(p.category)}
                   {p.category.toUpperCase()}
                 </span>
@@ -113,7 +113,7 @@ export default function PortfolioShowcase({
                 {p.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs font-title uppercase tracking-widest bg-zinc-950 border border-zinc-800 text-cyan-400 px-1.5 py-0.5 rounded-xs"
+                    className="text-sm font-title uppercase tracking-widest bg-zinc-950 border border-zinc-800 text-cyan-400 px-1.5 py-0.5 rounded-xs"
                   >
                     {tech}
                   </span>
@@ -121,7 +121,7 @@ export default function PortfolioShowcase({
               </div>
 
               {/* Action trigger button */}
-              <span className="text-xs font-title uppercase text-zinc-500 group-hover:text-pink-400 transition-colors flex items-center gap-1 flex-shrink-0">
+              <span className="text-sm font-title uppercase text-zinc-500 group-hover:text-pink-400 transition-colors flex items-center gap-1 flex-shrink-0">
                 VIEW DETAILS <Play className="w-2.5 h-2.5 fill-current" />
               </span>
             </div>
