@@ -52,8 +52,8 @@ export default function ScrollingBanner({
       <div
         className={
           direction === "left"
-            ? "animate-scroll-left flex gap-10 sm:gap-20"
-            : "animate-scroll-right flex gap-10 sm:gap-20"
+            ? "animate-scroll-left flex items-center gap-10 sm:gap-20"
+            : "animate-scroll-right flex items-center gap-10 sm:gap-20"
         }
       >
         {loopItems.map((item, index) => {
